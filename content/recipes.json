@@ -1,19 +1,58 @@
 {
   "recipes": [
     {
+      "id": "dreamreachwoodknock",
+      "requirements$add": {
+        "passion": 1,
+        "waywood": -1,
+        "waystag_after": -1,
+        "waywhite": -1,
+        "waypeacock": -1
+      }
+    },
+    {
+      "id": "dreamreachwoodlantern",
+      "requirements$add": {
+        "passion": 1,
+        "waywood": -1,
+        "waystag_after": -1,
+        "waywhite": -1,
+        "waypeacock": -1
+      }
+    },
+    {
+      "id": "dreamreachwoodlantern",
+      "requirements$add": {
+        "passion": 1,
+        "waywood": -1,
+        "waystag_after": -1,
+        "waywhite": -1,
+        "waypeacock": -1
+      }
+    },
+    {
       "id": "dreamreachwhitelantern",
       "warmup": 60,
-      "craftable": true
+      "craftable": true,
+      "requirements$add": {
+        "waywood": 1
+      }
     },
     {
       "id": "dreamreachwhiteknock",
       "warmup": 60,
+      "requirements$add": {
+        "waywood": 1
+      },
       "craftable": true
     },
     {
       "id": "dreamreachwhitewinter",
       "warmup": 60,
-      "craftable": true
+      "craftable": true,
+      "requirements$add": {
+        "waywood": 1
+      }
     },
     {
       "id": "do_stop_dream_reason",
@@ -288,6 +327,9 @@
     },
     {
       "id": "dreamreachstagfirst",
+      "requirements$add": {
+        "waywhite": 1
+      },
       "craftable": true
     },
     {
@@ -454,15 +496,24 @@
 
     {
       "id": "dreamreachspiderlantern",
-      "craftable": true
+      "craftable": true,
+      "requirements$add": {
+        "waystag_after": 1
+      }
     },
     {
       "id": "dreamreachspiderknock",
-      "craftable": true
+      "craftable": true,
+      "requirements$add": {
+        "waystag_after": 1
+      }
     },
     {
       "id": "dreamreachspidergrail",
-      "craftable": true
+      "craftable": true,
+      "requirements$add": {
+        "waystag_after": 1
+      }
     },
     {
       "id": "dreamreason",
