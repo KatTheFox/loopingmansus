@@ -1,0 +1,26 @@
+{
+  "elements": [
+    {
+      "id": "waywood",
+      "slots": [
+        {
+          "id": "Path",
+          "label": "Path",
+          "description": "Employ Passion to enter the Wood - or, with the right lore, find the way to the White Door, the door where the dead throng.",
+          "required": {
+            "lore": 1,
+            "passion": 1
+          }
+        },
+        {
+          "id": "Persistence",
+          "label": "Persistence",
+          "description": "With more Passion, I could wander the Wood repeatedly.",
+          "required": {
+            "passion": 1
+          }
+        }
+      ]
+    }
+  ]
+}
