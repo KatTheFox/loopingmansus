@@ -1,19 +1,62 @@
 {
   "recipes": [
     {
+      "id": "dreamreachwhitelantern",
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "dreamreachwhiteknock",
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "dreamreachwhitewinter",
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "do_stop_dream_reason",
+      "label": "Stop Dreaming",
+      "requirements": {
+        "reason": 1
+      },
+      "aspects": {
+        "fatiguing": 1
+      }
+    },
+    {
+      "id": "do_stop_dream_passion",
+      "label": "Stop Dreaming",
+      "requirements": {
+        "passion": 1
+      },
+      "aspects": {
+        "fatiguing": 1
+      }
+    },
+
+    {
+      "id": "do_stop_dream_restlessness",
+      "label": "Stop Dreaming",
+      "requirements": {
+        "restlessness": 1
+      },
+      "aspects": {
+        "fatiguing": 1
+      }
+    },
+    {
       "id": "dreamusewoodway_loop",
       "label": "The Way to the Wood [Loop]",
       "actionid": "dream",
-      "$priority": 1,
       "requirements": {
         "waywood": 1,
         "passion": 2
       },
       "startdescription": "If I have enough Passion, I can walk the dream-road to the Wood. If I have the right knowledge, I might be able to find the way beyond it.",
       "description": "The waters of the Wood run cold and deep, but never clear. Rote memory alone will not take me there. I must engage my Passion. Now I drift into other dreams.",
-      "aspects": {
-        "fatiguing": 0
-      },
+
       "alt": [
         {
           "id": "poison.long.way.trap",
@@ -22,10 +65,34 @@
         {
           "id": "dreamenterwood_start",
           "chance": 100
+        },
+        {
+          "id": "dreamreachwhitelantern",
+          "chance": 100
+        },
+        {
+          "id": "dreamreachwhiteknock",
+          "chance": 100
+        },
+        {
+          "id": "dreamreachwhitewinter",
+          "chance": 100
+        },
+        {
+          "id": "dreamnotquitereachwhitelantern",
+          "chance": 100
+        },
+        {
+          "id": "dreamnotquitereachwhiteknock",
+          "chance": 100
+        },
+        {
+          "id": "dreamnotquitereachwhitewinter",
+          "chance": 100
         }
       ],
       "craftable": true,
-      "warmup": 60,
+      "warmup": 50,
       "linked": [
         {
           "id": "dream_router",
@@ -53,9 +120,6 @@
       "portaleffect": "wood",
       "achievements": ["A_MANSUS_WOOD"],
       "warmup": 0,
-      "aspects": {
-        "fatiguing": 0
-      },
       "linked": [
         {
           "id": "dreamwood_stop_check",
@@ -64,24 +128,11 @@
       ]
     },
     {
-      "id": "do_stop_dream",
-      "label": "Stop Dreaming",
-      "requirements": {
-        "reason": 1
-      },
-      "aspects": {
-        "fatiguing": 1
-      }
-    },
-    {
       "id": "dreamwood_stop_check",
       "actionid": "dream",
       "label": "The Way to the Wood",
       "requirements": {
         "waywood": 1
-      },
-      "aspects": {
-        "fatiguing": 0
       },
       "slots": [
         {
@@ -99,7 +150,10 @@
       "description": ".",
       "linked": [
         {
-          "id": "do_stop_dream"
+          "id": "do_stop_dream_reason"
+        },
+        {
+          "id": "do_stop_dream_restlessness"
         },
         {
           "id": "dreamusewoodway_loop"
@@ -122,6 +176,403 @@
         "passion": 1,
         "waywood": -1
       }
+    },
+
+    {
+      "id": "dreamusewhiteway_loop",
+      "label": "The Way to the White Door [Loop]",
+      "actionid": "dream",
+      "$priority": 1,
+      "requirements": {
+        "waywhite": 1,
+        "health": 2
+      },
+      "startdescription": "In my dreams, I know the path to the White Door, through the Bounds. But that path is thronged with the Dead who pass that way. I will need Health to resist their chill.",
+      "description": "The narrow path is crowded with slow shapes - the air shivers with their sighs. My blood is thicked with cold. I must turn back. Now I drift into other dreams.",
+
+      "alt": [
+        {
+          "id": "poison.long.way.trap",
+          "additional": true
+        },
+        {
+          "id": "dreamenterwhite_start",
+          "chance": 100
+        }
+      ],
+      "craftable": true,
+      "warmup": 50,
+      "linked": [
+        {
+          "id": "dream_router",
+          "chance": 100
+        }
+      ]
+    },
+    {
+      "id": "dreamenterwhite_start",
+      "label": "Entering the White Door",
+      "actionid": "dream",
+      "craftable": false,
+      "requirements": {
+        "waywhite": 1,
+        "health": 2
+      },
+      "startdescription": "Now I can approach the White Door through the Bounds. Now I can press my fingers to it, feel its chill, watch it swing open. As it opens, my mouth closes, tightens, heals over like a lost deformity. Around and about me is the cobalt light of the Mansus...",
+      "description": ".",
+      "alt": [
+        {
+          "id": "poison.long.way.trap",
+          "additional": true
+        }
+      ],
+      "portaleffect": "whitedoor",
+      "achievements": ["A_MANSUS_WHITEDOOR"],
+      "warmup": 0,
+      "linked": [
+        {
+          "id": "dreamwhite_stop_check",
+          "chance": 100
+        }
+      ]
+    },
+    {
+      "id": "dreamwhite_stop_check",
+      "actionid": "dream",
+      "label": "The Way to the White Door",
+      "requirements": {
+        "waywhite": 1
+      },
+      "slots": [
+        {
+          "id": "stop",
+          "label": "Stop?",
+          "required": {
+            "reason": 1,
+            "restlessness": 1
+          },
+          "forbidden": {},
+          "description": "Perhaps, too much dreaming is folly."
+        }
+      ],
+      "startdescription": "In my dreams, I know the path to the White Door, through the Bounds. But that path is thronged with the Dead who pass that way. I will need Health to resist their chill.",
+      "description": ".",
+      "linked": [
+        {
+          "id": "do_stop_dream_reason"
+        },
+        {
+          "id": "do_stop_dream_restlessness"
+        },
+        {
+          "id": "dreamusewhiteway_loop"
+        }
+      ],
+      "warmup": 10,
+      "craftable": false
+    },
+    {
+      "id": "dreamusewhiteway",
+      "slots": [],
+      "requirements": {
+        "health": 1,
+        "waywhite": 1
+      }
+    },
+    {
+      "id": "dreamhealth",
+      "requirements": {
+        "health": 1,
+        "waywhite": -1
+      }
+    },
+    {
+      "id": "dreamreachstagfirst",
+      "craftable": true
+    },
+    {
+      "id": "dreamascensionpowera",
+      "requirements": {
+        "ascensionpowera": 1,
+        "waywhite": -1
+      }
+    },
+    {
+      "id": "dreamascensionenlightenmenta",
+      "requirements": {
+        "ascensionenlightenmenta": 1,
+        "waywhite": -1
+      }
+    },
+    {
+      "id": "dreamascensionsensationa",
+      "requirements": {
+        "ascensionsensationa": 1,
+        "waywhite": -1
+      }
+    },
+    {
+      "id": "dreamascension_switchfromchange",
+      "requirements": {
+        "ascensionchangea": 1,
+        "waywhite": -1
+      }
+    },
+    {
+      "id": "temptationremembrancehintdream",
+      "requirements": {
+        "temptation.remembrance": 1,
+        "waywhite": -1
+      }
+    },
+
+    {
+      "id": "dreamusestagway_loop",
+      "label": "The Way to the Stag Door [Loop]",
+      "$priority": 1,
+      "actionid": "dream",
+      "requirements": {
+        "waystag_after": 1,
+        "reason": 2
+      },
+      "startdescription": "In my dreams, I know the path to the Stag Door, through the maze of the Bounds. Ghirbi will let me pass, but the path is always a puzzle. I will need Reason.",
+      "description": "Here in the high dry byways of the Bounds are the intricate fissures and snares of ten thousand years of time. My Reason is lacking. I will wake without sight of the Door. Now I drift into other dreams.",
+
+      "alt": [
+        {
+          "id": "poison.long.way.trap",
+          "additional": true
+        },
+        {
+          "id": "dreamenterstag_loop",
+          "chance": 100
+        },
+        {
+          "id": "dreamreachspiderlantern",
+          "chance": 100
+        },
+        {
+          "id": "dreamreachspiderknock",
+          "chance": 100
+        },
+        {
+          "id": "dreamreachspidergrail",
+          "chance": 100
+        },
+        {
+          "id": "dreamnotquitereachspiderlantern",
+          "chance": 100
+        },
+        {
+          "id": "dreamnotquitereachspiderknock",
+          "chance": 100
+        },
+        {
+          "id": "dreamnotquitereachspidergrail",
+          "chance": 100
+        }
+      ],
+      "craftable": true,
+      "warmup": 50,
+      "linked": [
+        {
+          "id": "dream_router",
+          "chance": 100
+        }
+      ]
+    },
+    {
+      "id": "dreamenterstag_loop",
+      "label": "Entering the Stag Door",
+      "actionid": "dream",
+      "craftable": false,
+      "requirements": {
+        "waystag_after": 1,
+        "reason": 2
+      },
+      "startdescription": "In my dreams, I know the path to the Stag Door, through the maze of the Bounds. Ghirbi will let me pass, but the path is always a puzzle. I will need Reason.",
+      "description": ".",
+      "alt": [
+        {
+          "id": "poison.long.way.trap",
+          "additional": true
+        }
+      ],
+      "portaleffect": "stagdoor",
+      "achievements": ["A_MANSUS_STAGDOOR"],
+      "warmup": 0,
+      "linked": [
+        {
+          "id": "dreamstag_stop_check",
+          "chance": 100
+        }
+      ]
+    },
+    {
+      "id": "dreamstag_stop_check",
+      "actionid": "dream",
+      "label": "The Way to the Stag Door",
+      "requirements": {
+        "waystag_after": 1
+      },
+      "slots": [
+        {
+          "id": "stop",
+          "label": "Stop?",
+          "required": {
+            "passion": 1,
+            "restlessness": 1
+          },
+          "forbidden": {},
+          "description": "My reason is engaged with finding the path. I will need passion or restlessness to break away from this dream."
+        }
+      ],
+      "startdescription": "In my dreams, I know the path to the Stag Door, through the maze of the Bounds. Ghirbi will let me pass, but the path is always a puzzle. I will need Reason.",
+      "description": ".",
+      "linked": [
+        {
+          "id": "do_stop_dream_passion"
+        },
+        {
+          "id": "do_stop_dream_restlessness"
+        },
+        {
+          "id": "dreamusestagway_loop"
+        }
+      ],
+      "warmup": 10,
+      "craftable": false
+    },
+    {
+      "id": "dreamusestagway",
+      "slots": [],
+      "requirements": {
+        "reason": 1,
+        "waystag_after": 1
+      }
+    },
+
+    {
+      "id": "dreamreachspiderlantern",
+      "craftable": true
+    },
+    {
+      "id": "dreamreachspiderknock",
+      "craftable": true
+    },
+    {
+      "id": "dreamreachspidergrail",
+      "craftable": true
+    },
+    {
+      "id": "dreamreason",
+      "requirements": {
+        "reason": 1,
+        "waystag_after": -1
+      }
+    },
+
+    { "id": "dreamusepeacockway", "slots": [] },
+    {
+      "id": "dreamusepeacockway_loop",
+      "label": "The Way to the Peacock's Door [Loop]",
+      "$priority": 1,
+      "actionid": "dream",
+      "requirements": {
+        "waypeacock": 1,
+        "toolknockf": 1,
+        "lore": 1,
+        "knock": 13
+      },
+      "startdescription": "In my dreams, I know the path through the Glassgarden to the Peacock's Door: the most admirable of Doors, the Door which shines like a mirror. Perhaps, with the right resources, I can pass it. ",
+      "description": "The Peacock's Door is purple as the sweetest gem, as the ripest fruit, as the most depthless prose. It takes my reflection and returns nothing. When I wake, I won't recall my dream.",
+
+      "alt": [
+        {
+          "id": "poison.long.way.trap",
+          "additional": true
+        },
+        {
+          "id": "apostlelantern.createpillar2",
+          "chance": 100
+        },
+        {
+          "id": "dreamenterpeacock_loop",
+          "chance": 100
+        }
+      ],
+      "craftable": true,
+      "warmup": 50,
+      "linked": [
+        {
+          "id": "dream_router",
+          "chance": 100
+        }
+      ]
+    },
+    {
+      "id": "dreamenterpeacock_loop",
+      "label": "Passing the Peacock's Door",
+      "actionid": "dream",
+      "craftable": false,
+      "requirements": {
+        "waypeacock": 1,
+        "toolknockf": 1,
+        "lore": 1,
+        "knock": 13
+      },
+      "startdescription": "A tuning-fork hum animates the key in my hand; the Peacock's Door groans in response. Already a sensuous shiver ripples its surface. It aches for fracture, and when it finds that satisfaction, I will enter.",
+      "description": ".",
+      "alt": [
+        {
+          "id": "poison.long.way.trap",
+          "additional": true
+        }
+      ],
+      "portaleffect": "peacockdoor",
+      "achievements": ["A_MANSUS_PEACOCKDOOR"],
+      "warmup": 0,
+      "linked": [
+        {
+          "id": "dreampeacock_stop_check",
+          "chance": 100
+        }
+      ]
+    },
+    {
+      "id": "dreampeacock_stop_check",
+      "actionid": "dream",
+      "label": "The Way to the Peacock's Door",
+      "requirements": {
+        "waypeacock": 1
+      },
+      "slots": [
+        {
+          "id": "stop",
+          "label": "Stop?",
+          "required": {
+            "reason": 1,
+            "restlessness": 1
+          },
+          "forbidden": {},
+          "description": "Perhaps, too much dreaming is folly."
+        }
+      ],
+      "startdescription": "A tuning-fork hum animates the key in my hand; the Peacock's Door groans in response. Already a sensuous shiver ripples its surface. It aches for fracture, and when it finds that satisfaction, I will enter.",
+      "description": ".",
+      "linked": [
+        {
+          "id": "do_stop_dream_passion"
+        },
+        {
+          "id": "do_stop_dream_restlessness"
+        },
+        {
+          "id": "dreamusepeacockway_loop"
+        }
+      ],
+      "warmup": 10,
+      "craftable": false
     }
   ]
 }

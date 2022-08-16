@@ -21,6 +21,68 @@
           }
         }
       ]
+    },
+    {
+      "id": "waywhite",
+      "slots": [
+        {
+          "id": "Ascent",
+          "label": "Ascent",
+          "description": "Invest Health to pass the White Door - or follow desire to the Stag Door, the door of the Know.",
+          "required": {
+            "desire": 1,
+            "health": 1
+          }
+        },
+        {
+          "id": "Fortitude",
+          "label": "Fortitude",
+          "description": "With more Health, I could traverse the White Door repeatedly.",
+          "required": {
+            "health": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "waystag_after",
+      "slots": [
+        {
+          "id": "Ascent",
+          "label": "Ascent",
+          "description": "Invest Reason to pass the Stag Door - or, with the right lore, find the way to the Spider's Door, the door where blood is spilled.",
+          "required": {
+            "reason": 1,
+            "lore": 1
+          }
+        },
+        {
+          "id": "Intellect",
+          "label": "Intellect",
+          "description": "With more Reason, I could wander the area beyond the Stag Door repeatedly.",
+          "required": {
+            "reason": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "waypeacock",
+      "slots": [
+        {
+          "id": "Ascent",
+          "label": "Ascent",
+          "description": "The Peacock Door does not open, exactly.",
+          "required": {
+            "tool": 1
+          }
+        },
+        {
+          "id": "lore",
+          "label": "Lore",
+          "description": "With some Knock-lore, and a tool that will not shatter, I could enter the Peacock Door as many times as I'd like"
+        }
+      ]
     }
   ]
 }
