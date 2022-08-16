@@ -1,0 +1,150 @@
+{
+  "elements": [
+    {
+      "id": "dreamusewoodway_loop",
+      "label": "The Way to the Wood [Loop]",
+      "actionid": "dream",
+      "requirements": {
+        "waywood": 1
+      },
+      "slots": [
+        {
+          "id": "Path",
+          "label": "Path",
+          "description": "Employ Passion to enter the Wood - or, with the right lore, find the way to the White Door, the door where the dead throng.",
+          "required": {
+            "lore": 1,
+            "passion": 1
+          }
+        },
+        {
+          "id": "Persistence",
+          "label": "Persistence",
+          "description": "With more Passion, I could wander the Wood repeatedly.",
+          "required": {
+            "passion": 1
+          }
+        }
+      ],
+      "startdescription": "If I have enough Passion, I can walk the dream-road to the Wood. If I have the right knowledge, I might be able to find the way beyond it.",
+      "description": "The waters of the Wood run cold and deep, but never clear. Rote memory alone will not take me there. I must engage my Passion. Now I drift into other dreams.",
+      "aspects": {
+        "fatiguing": 1
+      },
+      "alt": [
+        {
+          "id": "poison.long.way.trap",
+          "additional": true
+        },
+        {
+          "id": "dreamenterwood_start",
+          "chance": 100
+        },
+        {
+          "id": "dreamreachwhitelantern",
+          "chance": 100
+        },
+        {
+          "id": "dreamreachwhiteknock",
+          "chance": 100
+        },
+        {
+          "id": "dreamreachwhitewinter",
+          "chance": 100
+        },
+        {
+          "id": "dreamnotquitereachwhitelantern",
+          "chance": 100
+        },
+        {
+          "id": "dreamnotquitereachwhiteknock",
+          "chance": 100
+        },
+        {
+          "id": "dreamnotquitereachwhitewinter",
+          "chance": 100
+        }
+      ],
+      "craftable": true,
+      "warmup": 60,
+      "linked": [
+        {
+          "id": "dream_router",
+          "chance": 100
+        }
+      ]
+    },
+    {
+      "id": "dreamenterwood_start",
+      "label": "Entering the Wood",
+      "actionid": "dream",
+      "craftable": false,
+      "requirements": {
+        "waywood": 1,
+        "passion": 2
+      },
+      "startdescription": "Now I pass between scar-barked trees. The moon passes behind branches, though her fingers remain in my hair. I am stumbling over roots, now. It is tempting to drop to all fours, to avoid the low branches. Pale wings move, deep in the night.",
+      "description": ".",
+      "alt": [
+        {
+          "id": "poison.long.way.trap",
+          "additional": true
+        }
+      ],
+      "portaleffect": "wood",
+      "achievements": ["A_MANSUS_WOOD"],
+      "warmup": 0,
+      "aspects": {
+        "fatiguing": 1
+      },
+      "linked": [
+        {
+          "id": "dreamwood_stop_check",
+          "chance": 100
+        }
+      ]
+    },
+    {
+      "id": "do_stop_dream",
+      "label": "Stop Dreaming",
+      "requirements": {
+        "reason": 1
+      },
+      "aspects": {
+        "fatiguing": 1
+      }
+    },
+    {
+      "id": "dreamwood_stop_check",
+      "actionid": "dream",
+      "label": "The Way to the Wood",
+      "requirements": {
+        "waywood": 1
+      },
+      "slots": [
+        {
+          "id": "stop",
+          "label": "Stop?",
+          "required": {
+            "reason": 1,
+            "restlessness": 1
+          },
+          "forbidden": {},
+          "description": "Perhaps, too much dreaming is folly."
+        }
+      ],
+      "startdescription": "If I have enough Passion, I can walk the dream-road to the Wood. If I have the right knowledge, I might be able to find the way beyond it.",
+      "description": ".",
+      "linked": [
+        {
+          "id": "do_stop_dream"
+        },
+        {
+          "id": "dreamusewoodway_loop"
+        }
+      ],
+      "warmup": 60,
+      "craftable": false
+    }
+  ]
+}
