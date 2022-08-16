@@ -391,26 +391,32 @@
         },
         {
           "id": "dreamreachspiderlantern",
+          "warmup": 60,
           "chance": 100
         },
         {
           "id": "dreamreachspiderknock",
+          "warmup": 60,
           "chance": 100
         },
         {
           "id": "dreamreachspidergrail",
+          "warmup": 60,
           "chance": 100
         },
         {
           "id": "dreamnotquitereachspiderlantern",
+          "warmup": 60,
           "chance": 100
         },
         {
           "id": "dreamnotquitereachspiderknock",
+          "warmup": 60,
           "chance": 100
         },
         {
           "id": "dreamnotquitereachspidergrail",
+          "warmup": 60,
           "chance": 100
         }
       ],
@@ -496,6 +502,7 @@
 
     {
       "id": "dreamreachspiderlantern",
+      "warmup": 60,
       "craftable": true,
       "requirements$add": {
         "waystag_after": 1
@@ -503,6 +510,7 @@
     },
     {
       "id": "dreamreachspiderknock",
+      "warmup": 60,
       "craftable": true,
       "requirements$add": {
         "waystag_after": 1
@@ -510,6 +518,7 @@
     },
     {
       "id": "dreamreachspidergrail",
+      "warmup": 60,
       "craftable": true,
       "requirements$add": {
         "waystag_after": 1
@@ -613,7 +622,7 @@
       "description": ".",
       "linked": [
         {
-          "id": "do_stop_dream_passion"
+          "id": "do_stop_dream_reason"
         },
         {
           "id": "do_stop_dream_restlessness"

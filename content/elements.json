@@ -80,7 +80,10 @@
         {
           "id": "lore",
           "label": "Lore",
-          "description": "With some Knock-lore, and a tool that will not shatter, I could enter the Peacock Door as many times as I'd like"
+          "description": "With some Knock-lore, and a tool that will not shatter, I could enter the Peacock Door as many times as I'd like",
+          "required": {
+            "lore": 1
+          }
         }
       ]
     }
